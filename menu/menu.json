@@ -1,0 +1,20 @@
+{
+    "bienvenida": "Hola! bienvenido a mi sitio web, a continuación te presento el menú de nuestros sevicios, elige la opción que desees y presiona enter para conocer más al respecto:",
+    "menu":{
+        "carnes": [
+            "vaca",
+            "pollo",
+            "cerdo"
+        ],
+        "vegetales": {
+            "fibrosos": [
+                "pimentón",
+                "lechuga"
+            ],
+            "feculosos" : [
+                "plantano",
+                "zanahoria"
+            ]
+        }        
+    }
+}

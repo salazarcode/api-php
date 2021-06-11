@@ -1,0 +1,16 @@
+{
+    "name": "salazarcode/bot-fb-php",
+    "description": "Un bot que responda el chat de facebook",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrés Salazar",
+            "email": "andresalteclado@hotmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^5.3",
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
