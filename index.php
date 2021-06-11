@@ -6,30 +6,23 @@ require 'menu/index.php';
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Dotenv\Dotenv;
 
-
-//________________________________________________________________________ CONFIG
+// Aquí creamos la variable del request y lo llenamos 
+// con lo que envía el usuario
 $request = Request::createFromGlobals();
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
+// Aquí extraemos del cuerpo del request 
+// las variables que mandamos
+$nombre = $request->get("nombre");
 
-//________________________________________________________________________ PROCESS
-$mensaje = $_ENV["MENSAJE"];
+// Aquí construimos el objeto JSON y le pasamos como 
+// argumento un array php con variables y sus valores
+$response = new JsonResponse([
+    'nombre' => $nombre
+]);
 
-if($request->isMethod("GET")){
-    $input = $request->query->get('seleccion');
-
-
-    $response = new JsonResponse([
-        'mensaje' => $mensaje,
-        'method' => $request->isMethod("GET") ? "GET" : "POST",
-        "json" => json_decode($json_str)
-    ]);
-    
-    $response->send();
-}
-
+// Aquí simplemente retornamos el RESPONSE que creamos 
+// en el paso anterior
+$response->send();
 
 
